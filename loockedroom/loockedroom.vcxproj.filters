@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="networking">
+      <UniqueIdentifier>{68cb7e0f-d58f-48df-aad5-9d5e3900f364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="datastructure">
+      <UniqueIdentifier>{1790d53a-6ad1-42d8-bc7f-557680327c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="product">
+      <UniqueIdentifier>{8da96af4-7b93-493b-8947-ca16aae894f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="server.c">
+      <Filter>networking</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="server.h">
+      <Filter>networking</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
