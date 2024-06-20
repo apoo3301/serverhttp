@@ -2,6 +2,7 @@
 #define binaryLocateTree_h
 
 #include "../dist/node.h"
+#include <stdlib.h>
 
 // MARK: DATA TYPES
 
