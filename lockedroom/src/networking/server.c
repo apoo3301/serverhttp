@@ -1,6 +1,6 @@
 #include "server.h"
 
-struct Server server_constructor(int domain, int service, int protocol, u_long interface, int port, int backlog, void(*launch)(void)) {
+struct Server server_constructor(int domain, int service, int protocol, u_long interface, int port, int backlog, void(*launch)(struct Server *server)) {
 	struct Server server;
 
 	server.domain = domain;
@@ -30,7 +30,7 @@ struct Server server_constructor(int domain, int service, int protocol, u_long i
 		exit(1);
 	}
 
-
+	server.launch = launch;
 
 	return server;
 }
