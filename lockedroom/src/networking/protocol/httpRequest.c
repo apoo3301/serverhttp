@@ -46,7 +46,7 @@ struct httpRequest http_request_constructor(char* request_string) {
 	char *body = strtok(NULL, "|");
 	char *method = strtok(request_line, " ");
 	request.Method = method_select(method);
-	char* path = strtok(NULL, " ");
+	char *path = strtok(NULL, " ");
 	request.Path = path;
 	char *httpVersion = strtok(NULL, " ");
 	httpVersion = strtok(httpVersion, "/");
