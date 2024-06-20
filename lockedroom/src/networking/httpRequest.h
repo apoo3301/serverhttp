@@ -1,6 +1,8 @@
 #ifndef httpRequest_h
 #define httpRequest_h
 
+#include <string.h>
+
 enum httpMethod {
 	GET,
 	POST,
@@ -12,5 +14,13 @@ enum httpMethod {
 	OPTIONS,
 	TRACE
 };
+
+struct httpRequest {
+	int Method;
+	char* Path;
+	float httpVersion;
+};
+
+struct httpRequest http_request_constructor(char *request_string);
 
 #endif /* httpRequest_h */
