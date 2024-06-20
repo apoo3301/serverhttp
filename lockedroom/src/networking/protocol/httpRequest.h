@@ -2,6 +2,7 @@
 #define httpRequest_h
 
 #include <string.h>
+#include "../../datastructures/dictionary/dictionary.h"
 
 enum httpMethod {
 	GET,
