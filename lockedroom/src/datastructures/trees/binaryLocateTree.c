@@ -73,13 +73,8 @@ void insert_bst(struct BinaryLocateTree *tree, void *data, int size) {
 		if (direction == 1) {
 			destroy_node_bst(new_node);
 		}
-		else if (direction == 1) {
-			cursor->next = new_node;
-			new_node->prev = cursor;
-		}
-		else {
-			cursor->prev = new_node;
-			new_node->next = cursor;
+		else if (direction == -1) {
+			cursor->prev = create_node_bst(data, size);
 		}
 	}
 }
