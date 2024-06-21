@@ -1,4 +1,5 @@
 #include "httpRequest.h"
+#include "../../datastructures/lists/queue.h"
 
 int method_select(char *method) {
 	if (strcmp(method, "GET") == 0) {
@@ -52,6 +53,21 @@ struct httpRequest http_request_constructor(char* request_string) {
 	httpVersion = strtok(httpVersion, "/");
 	httpVersion = strtok(NULL, "/");
 	request.httpVersion = (float)atof(httpVersion);
+	
+	request.header_fileds = dictionary_constructor(compare_string_keys);
+	struct Queue headers = queue_constructor();
+
+	char* token = strtok(header_fields, "\n");
+	while (token) {
+		headers.push(&headers, token, sizeof(*token));
+		token = strtok(NULL, "\n");
+	}
+
+	char* header = (char*)headers.peek(&headers);
+	while (header) {
+		char *key = strtok(header, ":");
+		char *value = strtok(NULL, ":");
+	}
 
 	return request;
 }
