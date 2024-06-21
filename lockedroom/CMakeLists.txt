@@ -12,7 +12,10 @@ endif()
 project ("lockedroom")
 
 # Ajoutez une source à l'exécutable de ce projet.
-add_executable (lockedroom src/networking/main.c "src/networking/node/server.c" "src/networking/httpRequest.h" "src/networking/protocol/httpRequest.c")
+add_executable (lockedroom 
+networking/main.c 
+networking/server.c
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET lockedroom PROPERTY CXX_STANDARD 20)
