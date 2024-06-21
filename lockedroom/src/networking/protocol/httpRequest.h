@@ -6,25 +6,13 @@
 #include <stdio.h>
 #include "../../datastructures/dictionary/dictionary.h"
 
-enum httpMethod {
-	GET,
-	POST,
-	PUT,
-	HEAD,
-	PATCH,
-	DELETE,
-	CONNECT,
-	OPTIONS,
-	TRACE
-};
-
 struct httpRequest {
-	int Method;
-	char* Path;
-	float httpVersion;
+	struct Dictionary request_line;
 	struct Dictionary header_fields;
+	struct Dictionary body;
 };
 
 struct httpRequest http_request_constructor(char *request_string);
+void http_request_destructor(struct httpRequest *request);
 
 #endif /* httpRequest_h */

@@ -66,7 +66,10 @@ struct httpRequest http_request_constructor(char* request_string) {
 	char* header = (char*)headers.peek(&headers);
 	while (header) {
 		char *key = strtok(header, ":");
-		char *value = strtok(NULL, ":");
+		char *value = strtok(NULL, "|");
+		request.header_fields.insert(&request.header_fields, key, sizeof(*key), value, sizeof(*value));
+		headers.pop(&headers);
+		header = (char *)headers.peek(&headers);
 	}
 
 	return request;
