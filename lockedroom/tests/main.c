@@ -1,4 +1,4 @@
-#include "server.h"
+#include "../networking/server.h"
 
 void launch(struct Server* server) {
 	char buffer[30000];
